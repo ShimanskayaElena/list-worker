@@ -1,0 +1,13 @@
+<ul>
+  <li *ngFor="let worker of listWorker" (click)="onSelect(worker)">
+    {{worker.name}}
+  </li>
+</ul>
+
+<app-worker *ngIf="selectedWorker">
+  <div>
+    Selected: {{selectedWorker.name}}
+    <button (click)="delete(selectedWorker)">X</button>
+  </div>
+</app-worker>
+
