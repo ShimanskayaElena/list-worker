@@ -1,5 +1,7 @@
 # ListWorker
 
+You can see the demo version of this project under the link - https://shimanskayaelena.github.io/list-worker/
+
 Exercise
 
 Write a single web page that:  http://jsonplaceholder.typicode.com/users
