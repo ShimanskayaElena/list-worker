@@ -13,7 +13,7 @@ export class ListWorkerComponent implements OnInit {
 
   listWorker; // list of all employees
   selectedWorker: Worker; // employee, information about which will be displayed in the modal window
-  public errorMessage: string;
+  errorMessage: string;
 
   constructor( private listService: ListService) { }
 

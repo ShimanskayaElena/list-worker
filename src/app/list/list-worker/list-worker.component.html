@@ -1,13 +1,38 @@
 <ul>
-  <li *ngFor="let worker of listWorker" (click)="onSelect(worker)">
+  <li class="list" *ngFor="let worker of listWorker">
     {{worker.name}}
+    <span (click)="onSelect(worker)">more info</span>
   </li>
 </ul>
 
-<app-worker *ngIf="selectedWorker">
-  <div>
-    Selected: {{selectedWorker.name}}
-    <button (click)="delete(selectedWorker)">X</button>
-  </div>
-</app-worker>
-
+<div class="overlay" *ngIf="selectedWorker">
+  <app-worker>
+    <div>
+      <p>name: {{selectedWorker.name}}</p>
+      <p>username: {{selectedWorker.username}}</p>
+      <p>email: {{selectedWorker.email}}</p>
+      <p>address:</p>
+      <ul>
+        <li>street: {{selectedWorker.address.street}}</li>
+        <li>suite: {{selectedWorker.address.suite}}</li>
+        <li>city: {{selectedWorker.address.city}}</li>
+        <li>zipcode: {{selectedWorker.address.zipcode}}</li>
+        <li>geo:
+          <ul>
+            <li>lat: {{selectedWorker.address.geo.lat}}</li>
+            <li>lng: {{selectedWorker.address.geo.lng}}</li>
+          </ul>
+        </li>
+      </ul>
+      <p>phone: {{selectedWorker.phone}}</p>
+      <p>website: {{selectedWorker.website}}</p>
+      <p>company:</p>
+        <ul>
+          <li>name: {{selectedWorker.company.name}}</li>
+          <li>catchPhrase: {{selectedWorker.company.catchPhrase}}</li>
+          <li>bs: {{selectedWorker.company.bs}}</li>
+        </ul>
+      <div class="close-popup" (click)="delete(selectedWorker)"></div>
+    </div>
+  </app-worker>
+</div>
