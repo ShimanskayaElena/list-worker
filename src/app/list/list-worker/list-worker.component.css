@@ -1,8 +1,45 @@
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 10%;
+}
+
+.flex-container div:first-child {
+	border-left: 1px solid gray;
+}
+
+.flex-item {
+	width: 25%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+.flex-item-head {
+	border-top: 1px solid gray;
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.flex-item-body {
+	cursor: pointer;
+	padding-left: 2%;
+}
+
+div:hover .flex-item-body {
+	color: #ff5252;
+}
+
 li {
 	list-style-type: none;
 }
 
-li > span {
+/* li > span {
 	cursor: pointer;
 	color: gray;
 	font-size: 14px;
@@ -15,7 +52,7 @@ li > span:hover {
 .list {
 	padding: 10px 0;
 	transition: all .2s ease;
-}
+}*/
 
 .overlay {
     position: absolute;
@@ -55,4 +92,49 @@ li > span:hover {
 	top: 11px;
 	transform: rotate(45deg);
 	left: -4px;
+}
+
+@media screen and (max-width: 992px) {
+	.flex-container {
+		margin: 0 5%;
+	}
+
+	.flex-item-head {
+		font-size: 16px;	
+	}
+
+	.flex-item-body {
+		padding-left: 1%;
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.flex-container {
+		margin: 0 3%;
+	}
+
+	.flex-item-head {
+		font-size: 12px;	
+	}
+
+	.flex-item-body {
+		font-size: 11px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.flex-container {
+		margin: 0 1%;
+	}
+
+	.hidden {
+		display: none;
+	}
+
+	.flex-item {
+		width: 50%;
+		font-size: 13px;
+		padding: 3% 0 3% 1%;
+	}
 }

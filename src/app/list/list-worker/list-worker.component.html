@@ -1,9 +1,23 @@
-<ul>
+<div class="flex-container">
+    <div class="flex-item flex-item-head">name</div>
+    <div class="flex-item flex-item-head hidden">username</div>
+    <div class="flex-item flex-item-head hidden">website</div>
+    <div class="flex-item flex-item-head">company</div>
+</div>
+
+<div class="flex-container" *ngFor="let worker of listWorker"  (click)="onSelect(worker)">
+  <div class="flex-item flex-item-body">{{worker.name}}</div>
+  <div class="flex-item flex-item-body hidden">{{worker.username}}</div>
+  <div class="flex-item flex-item-body hidden">{{worker.website}}</div>
+  <div class="flex-item flex-item-body">{{worker.company.name}}</div>
+</div>
+
+<!--<ul>
   <li class="list" *ngFor="let worker of listWorker">
     {{worker.name}}
     <span (click)="onSelect(worker)">more info</span>
   </li>
-</ul>
+</ul>-->
 
 <div class="overlay" *ngIf="selectedWorker">
   <app-worker>
